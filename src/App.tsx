@@ -1,15 +1,7 @@
-import { FunctionComponent } from 'react';
+import Header from './components/header/header.component';
 
-interface AppProps {
-  message: string;
-}
-
-const App: FunctionComponent<AppProps> = ({ message }) => {
-  return (
-    <div>
-      <p>{message}</p>
-    </div>
-  );
+const App = () => {
+  return <Header />;
 };
 
 export default App;

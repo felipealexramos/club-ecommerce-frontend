@@ -1,0 +1,33 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-item {
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.header-item:nth-child(1),
+.header-item:nth-child(2),
+.header-item:nth-child(3),
+.header-item:nth-child(4) {
+  margin-right: 40px;
+}
