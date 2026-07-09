@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Category from '../../types/category.types';
-import './categories.styles.css';
 import axios from 'axios';
 import env from '../../config/.env.config';
 import CategoryItem from '../category-item/category-item.component';
