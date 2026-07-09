@@ -1,9 +1,10 @@
+import { HeaderContainer } from './header.styles';
 import './header.styles.css';
 import { BsCart3 } from 'react-icons/bs';
 
 const Header = () => {
   return (
-    <header className='header-container'>
+    <HeaderContainer>
       <h2 className='header-title'>CLUB CLOTHING</h2>
       <div className='header-items'>
         <div className='header-item'>Explorar</div>
@@ -13,7 +14,7 @@ const Header = () => {
           <BsCart3 size={25} />
         </div>
       </div>
-    </header>
+    </HeaderContainer>
   );
 };
 
