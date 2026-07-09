@@ -3,6 +3,7 @@ import Category from '../../types/category.types';
 import './categories.styles.css';
 import axios from 'axios';
 import env from '../../config/.env.config';
+import CategoryItem from '../category-item/category-item.component';
 
 const Categories = () => {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -10,9 +11,9 @@ const Categories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const { data } = await axios.get(`${env.apiUrl}/api/category`);
-        console.log('Fetched categories:', data);
-        setCategories(data);
+        const { data } = await axios.get<Category[] | { data: Category[] }>(`${env.apiUrl}/api/category`);
+        const categoryList = Array.isArray(data) ? data : data.data;
+        setCategories(Array.isArray(categoryList) ? categoryList : []);
       } catch (error) {
         console.error('Error fetching categories:', error);
       }
@@ -26,8 +27,7 @@ const Categories = () => {
       <div className='categories-content'>
         {categories.map((category) => (
           <div key={category.id}>
-            <img src={category.imageUrl} alt={category.displayName} />
-            <h3>{category.displayName}</h3>
+            <CategoryItem category={category} />
           </div>
         ))}
       </div>
